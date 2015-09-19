@@ -5,12 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var api = require('./routes/api');
 //var users = require('./routes/users');
 
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/myApp")
+mongoose.connect('mongodb://127.0.0.1/myApp');
+
+require('./models/models.js');
+
+var api = require('./routes/api');
 
 var app = express();
 
@@ -25,7 +28,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/api', api);
 //app.use('/users', users);
 
