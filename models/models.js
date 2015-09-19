@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 var contactSchema = new mongoose.Schema({
 	firstName: String,
 	lastName: String,
-	phone: Number,
-	dob: Date
+	email: String,
+	phone: Number	
 });
 
 //User model

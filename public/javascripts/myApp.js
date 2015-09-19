@@ -15,12 +15,12 @@ app.factory('myContacts', function ($resource) {
 })
 app.controller('mainController', function($scope, myContacts){
 	$scope.contacts = myContacts.query();
-	$scope.newContact = {firstName: '', lastName: '', phone: '', dob: ''};
+	$scope.newContact = {firstName: '', lastName: '', email: '', phone: ''};
 	
 	$scope.submit = function(){
 		myContacts.save($scope.newContact, function() {
 			$scope.contacts = myContacts.query();
-			$scope.newContact = {firstName: '', lastName: '', phone: '', dob: ''};
+			$scope.newContact = {firstName: '', lastName: '', email: '', phone: ''};
 		})
 	};
 });

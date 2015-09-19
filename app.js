@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1/myApp');
+mongoose.connect('mongodb://127.0.0.1/myContacts');
 
 require('./models/models.js');
 

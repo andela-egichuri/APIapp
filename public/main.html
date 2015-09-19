@@ -19,9 +19,9 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-4 control-label">Date of Birth</label>
+			<label class="col-sm-4 control-label">Email Address</label>
 			<div class="col-sm-8">
-				<input required type="date" class="form-control" ng-model="newContact.dob" /> 
+				<input required type="email" class="form-control" placeholder="Email Address" ng-model="newContact.email" /> 
 			</div>
 		</div>
 		<div class="form-group">
@@ -35,16 +35,16 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th class="col-sm-6">Name</th>
+					<th class="col-sm-5">Name</th>
 					<th class="col-sm-3">Phone Number</th>
-					<th class="col-sm-3">Date of Birth</th>
+					<th class="col-sm-4">Email Address</th>
 				</tr>
 			</thead>
 			<tbody>						
 					<tr ng-repeat="contact in contacts | orderBy:'created_at':true">
 						<td>{{contact.firstName}} {{contact.lastName}}</td>
 						<td>{{contact.phone}}</td>
-						<td>{{contact.dob | date:"MMM d, y"}}</td>
+						<td>{{contact.email}}</td>
 					</tr>						
 			</tbody>
 		</table>	

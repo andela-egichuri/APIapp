@@ -3,11 +3,11 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Contact = mongoose.model('Contact');
 
-//trying out APIs
+
 
 router.route('/contacts')
 	
-	//return all users
+
 	.get(function (req, res) {
 		
 		Contact.find(function(err, data){
@@ -21,14 +21,14 @@ router.route('/contacts')
 
 	})
 
-	//create new user
+
 	.post(function (req, res) {
 		
 		var contact = new Contact();
 		contact.firstName = req.body.firstName;
 		contact.lastName = req.body.lastName;
 		contact.phone = req.body.phone;
-		contact.phone = req.body.phone;
+		contact.email = req.body.email;
 		contact.save(function(err, data){
 
 			if (err) {
@@ -43,7 +43,6 @@ router.route('/contacts')
 
 router.route('/contacts/:id')
 
-	//return a particular user
 	.get(function (req, res) {
 		Contact.findById(req.params.id, function (err, contact) {
 			if (err) {
@@ -53,7 +52,7 @@ router.route('/contacts/:id')
 		})
 	})
 
-	//update user
+	
 	.put(function (req, res) {
 		Contact.findById(req.params.id, function (err, contact) {
 			if (err) {
@@ -75,7 +74,7 @@ router.route('/contacts/:id')
 		});
 	})
 
-	//delete user
+	
 	.delete(function (req, res) {
 		Contact.remove({
 			_id: req.params.id
