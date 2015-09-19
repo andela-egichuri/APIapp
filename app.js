@@ -8,6 +8,10 @@ var bodyParser = require('body-parser');
 var api = require('./routes/api');
 //var users = require('./routes/users');
 
+var mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost:27017/myApp")
+
 var app = express();
 
 // view engine setup
