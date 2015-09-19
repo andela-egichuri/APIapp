@@ -80,8 +80,7 @@ router.route('/contacts/:id')
 			_id: req.params.id
 		}, function (err) {
 			if (err) {
-				res.send(err);
-			res.json('Deleted')	
+				res.send(err);			
 			};
 		})
 	});

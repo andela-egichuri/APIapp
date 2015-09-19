@@ -23,4 +23,9 @@ app.controller('mainController', function($scope, myContacts){
 			$scope.newContact = {firstName: '', lastName: '', email: '', phone: ''};
 		})
 	};
+
+	$scope.delete = function(id){
+		myContacts.delete({id: id});
+		$scope.contacts = myContacts.query();
+	};
 });

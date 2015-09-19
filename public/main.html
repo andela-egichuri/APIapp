@@ -1,25 +1,26 @@
 <div class="clearfix">
+	<hr>
 	<form class="well form-horizontal" ng-Submit="submit()">
-		<div class="form-group">
+		<div class="form-group col-sm-6">
 			<label class="col-sm-4 control-label">First Name</label>
 			<div class="col-sm-8">
 				<input required type="text" class="form-control" placeholder="First name" ng-model="newContact.firstName" /> 
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="form-group col-sm-6">
 			<label class="col-sm-4 control-label">Last Name</label>
 			<div class="col-sm-8">
 				<input required type="text" class="form-control" placeholder="Last name" ng-model="newContact.lastName" /> 
 			</div>
 		</div>
-		<div class="form-group">
-			<label class="col-sm-4 control-label">Phone Number</label>
+		<div class="form-group col-sm-6">
+			<label class="col-sm-4 control-label">Phone No.</label>
 			<div class="col-sm-8">
 				<input required type="text" class="form-control" placeholder="Phone Number" ng-model="newContact.phone" /> 
 			</div>
 		</div>
-		<div class="form-group">
-			<label class="col-sm-4 control-label">Email Address</label>
+		<div class="form-group col-sm-6">
+			<label class="col-sm-4 control-label">Email </label>
 			<div class="col-sm-8">
 				<input required type="email" class="form-control" placeholder="Email Address" ng-model="newContact.email" /> 
 			</div>
@@ -35,9 +36,10 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th class="col-sm-5">Name</th>
+					<th class="col-sm-4">Name</th>
 					<th class="col-sm-3">Phone Number</th>
-					<th class="col-sm-4">Email Address</th>
+					<th class="col-sm-3">Email Address</th>
+					<th class="col-sm-2"></th>
 				</tr>
 			</thead>
 			<tbody>						
@@ -45,6 +47,7 @@
 						<td>{{contact.firstName}} {{contact.lastName}}</td>
 						<td>{{contact.phone}}</td>
 						<td>{{contact.email}}</td>
+						<td><button class="btn btn-sm" ng-click="delete(contact._id)">Delete</button></td>
 					</tr>						
 			</tbody>
 		</table>	
