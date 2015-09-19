@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+//trying out APIs
+
 router.route('/users')
 	
 	//return all users
